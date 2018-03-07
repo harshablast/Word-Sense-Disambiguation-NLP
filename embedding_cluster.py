@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def get_clusters(nearest_vectors, nearest_words):
 
-    kmeans = KMeans(n_clusters = 5, random_state = 0).fit(nearest_vectors)
+    kmeans = KMeans(n_clusters = 3, random_state = 0).fit(nearest_vectors)
     results = kmeans.labels_
 
     #affinity = AffinityPropagation()
@@ -12,7 +12,7 @@ def get_clusters(nearest_vectors, nearest_words):
     #results_affinity = affinity.labels_
 
 
-    groups = [[],[],[],[],[]]
+    groups = [[],[],[]]
     #groups_affinity = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
     
     for i in range(len(results)):
@@ -22,7 +22,7 @@ def get_clusters(nearest_vectors, nearest_words):
         groups_affinity[results_affinity[i]].append(nearest_words[i])
     """
     
-    return groups, results
+    return groups, results, kmeans
 
 def plot_clusters(nearest_vectors, nearest_words, results):
     pca = PCA(n_components = 2)

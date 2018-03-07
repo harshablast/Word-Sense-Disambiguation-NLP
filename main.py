@@ -43,6 +43,8 @@ def predict_group(sentences):
         sentence_vectors = np.array([model.get_vector(w) for w in sentence_words])
         average_vector = np.mean(sentence_vectors, axis = 0)
         predictions.append(kmeans.predict([average_vector]))
+        #predictions.append(kmeans.predict(sentence_vectors))
+        
         
     return predictions
 
