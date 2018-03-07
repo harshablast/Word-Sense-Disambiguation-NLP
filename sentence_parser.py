@@ -1,7 +1,6 @@
-
-def filtered_words(sentence, ):
-    words = sentence.split(' ')
-
-def 
+def predict_word(sentence, groups):
+    sentence = sentence.lower()
+    sentence_words = sentence.split(' ')
     
+        
 
